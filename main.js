@@ -45,8 +45,8 @@ console.log(/./.test('\n')) // ==> false
 // Esempio di utilizzo:
 
 // let dataTime = /\d\d-\d\d-\d\d\d\d \d\d:\d\d/;
-let dataTime = /[\d{1,2}\-]{2}\d+ \d{1,2}:\d{2}/;
-console.log(dataTime.test('01/30/2003 5:20')); // ==> true
+let dataTime = /^(\d{1,2}-){2}\d+ \d{1,2}:\d{2}$/;
+console.log(dataTime.test('01-30-2003 5:20')); // ==> true
 console.log(dataTime.test('30-jan-2003 15:20')); // ==> false
 
 // let expression = /[a-z][a-z][a-z]-[a-z][a-z][a-z][a-z]-[a-z][a-z][a-z]/;
@@ -92,4 +92,6 @@ console.log('Hours: ' + hoursPattern.test('3:12 pm')); // ==> true
 
 let binary = /([01]{2})+/;
 
+console.log(binary.test('01001110011011011110010110')); // ==> true
 
+// la u alla fine (come la i) fa ammettere i caratteri speciali tipo le emoticon.
