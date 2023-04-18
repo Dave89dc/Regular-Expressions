@@ -10,8 +10,8 @@ console.log(/abc/.test('abxde')); // ==> false
 console.log(/abc/.test('abfgchr')); // ==> false
 
 console.log(/[0123456789]/.test('in 1992')); // ==> true (le quadre permettono, a differenza di prima,
-                                                //  di chiedere se almeno uno dei caratteri presenti nelle quadre
-                                                //  è presente nella stringa testata).
+                                            //  di chiedere se almeno uno dei caratteri presenti nelle quadre
+                                            //  è presente nella stringa testata).
 console.log(/[0-9]/.test('in 1992')); // ==> true (è la stessa cosa, in trattino è l'abbreviazione che intende
                                         // anche i caratteri che sono in mezzo alle cifre).
 
@@ -44,8 +44,9 @@ console.log(/./.test('\n')) // ==> false
 
 // Esempio di utilizzo:
 
-let dataTime = /\d\d-\d\d-\d\d\d\d \d\d:\d\d/;
-console.log(dataTime.test('01-30-2003 05:20')); // ==> true
+// let dataTime = /\d\d-\d\d-\d\d\d\d \d\d:\d\d/;
+let dataTime = /[\d{1,2}\-]{2}\d+ \d{1,2}:\d{2}/;
+console.log(dataTime.test('01/30/2003 5:20')); // ==> true
 console.log(dataTime.test('30-jan-2003 15:20')); // ==> false
 
 // let expression = /[a-z][a-z][a-z]-[a-z][a-z][a-z][a-z]-[a-z][a-z][a-z]/;
